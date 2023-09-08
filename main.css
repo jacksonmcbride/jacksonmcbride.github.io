@@ -8,41 +8,41 @@ body, h1, h2, p, ul, li {
 /* Set a background color and text color for the entire page */
 body {
     background-color: #f2f2f2;
-    color: #333;
-    font-family: Arial, sans-serif;
+    color: #322F3D; 
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Style the header and navigation */
 header {
-    background-color: #5c946e; /* Earthy green */
+    background-color: #4B5D67; 
     color: #fff;
     padding: 20px 0;
 }
 
-.nav-links li {
-    display: inline;
-    margin-right: 20px;
-}
+    .nav-links li {
+        display: inline;
+        margin-right: 20px;
+    }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
 /* Style the hero section */
 #hero {
-    background-image: url('your-background-image.jpg');
+    background-image: url('18.jpg');
     background-size: cover;
     text-align: center;
-    padding: 100px 0;
-    color: #fff;
+    padding: 350px 0;   
+    color: #141414;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #74a984; /* Light green */
+    background-color: #89C4E1; 
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -51,13 +51,14 @@ header {
 }
 
 .cta-button:hover {
-    background-color: #5c946e; /* Earthy green */
+    background-color: #9fddff; 
 }
 
 /* Style the about section */
 #about {
     background-color: #fff;
     padding: 50px 0;
+    text-align: center;
 }
 
 /* Style the portfolio section */
@@ -68,9 +69,9 @@ header {
 
 /* Style the contact section */
 #contact {
-    background-color: #5c946e; /* Earthy green */
-    color: #fff;
+    background-color: #4B5D67; 
     padding: 50px 0;
+    color: #fff;
 }
 
 .contact-list li {
@@ -88,7 +89,7 @@ header {
 
 /* Style the footer */
 footer {
-    background-color: #333;
+    background-color: #322F3D;
     color: #fff;
     text-align: center;
     padding: 10px 0;
