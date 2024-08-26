@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
     
-        <title>USA Fencing Career</title>
+        <title>Random Forest Classification of Academic Success</title>
 		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
     
 	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
@@ -85,105 +85,64 @@
         <div class="content">
 			<div class="post_title">
 				<img src="/assets/img/file.png" />
-				<h1>USA Fencing Career</h1>
+				<h1>Random Forest Classification of Academic Success</h1>
 				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
 				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
 				<div class="btn"><span class="fa fa-window-minimize"></span></div>
 			</div>
 			<ul class="topbar">
-				<li>December 27, 2019</li>
+				<li>August 1, 2024</li>
 			</ul>
 			<div class="post_content">
-        		<div style="text-align: center;">
-  <img src="/assets/img/fencing_header.jpg" aalt="Team" style="width: 600px; height: auto;" />
-</div>
+        		<h1 id="40-of-success-is-showing-up-random-forest-classification-of-academic-success-using-non-grade-features">40% of Success is Showing Up: Random Forest Classification of Academic Success Using Non-Grade Features</h1>
 
-<center>
-<h2>USA Fencing Career</h2>
-</center>
+<p>In our recent project, we explored how Random Forests can classify high school students’ academic success using non-grade features. This investigation aimed to identify key predictors that could help educational institutions better support their students.</p>
 
-<h2 id="personal-information">Personal Information</h2>
+<h2 id="project-overview">Project Overview</h2>
 
-<ul>
-  <li><strong>Event:</strong> Saber</li>
-  <li><strong>Clubs:</strong> Phoenix Fencing Academy and Fencers Club of Arizona</li>
-  <li><strong>Coach:</strong> Will Becker</li>
-  <li><strong>How He Started Fencing:</strong> Saw it in a TV show and asked his mom to sign him up</li>
-  <li><strong>Favorite Fencing Memory:</strong> Winning bronze at the Sosnowiec Junior World Cup</li>
-  <li><strong>Something You May Be Surprised to Know:</strong> He was born in Australia</li>
-</ul>
+<p>Our dataset, sourced from Kaggle, included detailed records of 2,392 high school students. We focused on predicting the ‘grade class,’ which categorizes students’ GPAs into five ranges: A, B, C, D, and F. The features used in our analysis spanned demographics, study habits, parental involvement, and extracurricular activities.</p>
+
+<h3 id="correlation-analysis">Correlation Analysis</h3>
+
+<p>Through our correlation analysis, we found that the number of absences was the most significant predictor of academic success. Notably, GPA had a correlation of -0.92 with absences, and grade class had a correlation of 0.73 with absences. The heatmap below illustrates the correlation matrix between all features in our dataset.</p>
+
 <div style="text-align: center;">
-  <img src="/assets/img/celly_1.jpg" aalt="Team" style="width: 200px; height: auto;" />
+  <img src="/assets/img/heatmap.png" alt="Correlation Heatmap" style="width: 50%; height: auto;" />
 </div>
-<h2 id="junior-world-championship-teams">Junior World Championship Teams</h2>
 
-<ul>
-  <li><strong>2021:</strong>
-    <ul>
-      <li>Fourth - Junior World Championships (Team)</li>
-      <li>17th - Junior World Championships (Individual)</li>
-    </ul>
-  </li>
-</ul>
+<h2 id="model-development">Model Development</h2>
 
-<h2 id="international-achievements">International Achievements</h2>
+<p>We implemented a Random Forest classifier, which is well-suited for classification tasks like ours. Random Forests create multiple decision trees from bootstrap samples of the data, reducing the risk of overfitting. Our model was optimized using GridSearchCV, and the final configuration included 200 estimators, a maximum depth of 10, and the Gini impurity criterion.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Season</th>
-      <th>Event</th>
-      <th>Place</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2020</td>
-      <td>Junior Pan American Championships (Team)</td>
-      <td>Silver</td>
-    </tr>
-    <tr>
-      <td>2020</td>
-      <td>Boston Junior World Cup (Team)</td>
-      <td>Silver</td>
-    </tr>
-    <tr>
-      <td>2019</td>
-      <td>Sochi Junior World Cup (Team)</td>
-      <td>Silver</td>
-    </tr>
-    <tr>
-      <td>2019</td>
-      <td>Sosnowiec Junior World Cup</td>
-      <td>Bronze</td>
-    </tr>
-    <tr>
-      <td>2018</td>
-      <td>Warsaw Junior World Cup</td>
-      <td>13th</td>
-    </tr>
-    <tr>
-      <td>2017</td>
-      <td>December North American Cup (Division II)</td>
-      <td>Silver</td>
-    </tr>
-    <tr>
-      <td>2016</td>
-      <td>March North American Cup (Y14)</td>
-      <td>23rd</td>
-    </tr>
-    <tr>
-      <td>2015</td>
-      <td>USA Fencing National Championships (Div III)</td>
-      <td>40th</td>
-    </tr>
-    <tr>
-      <td>2014</td>
-      <td>July North American Cup (Y12)</td>
-      <td>24th</td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="hyperparameter-tuning">Hyperparameter Tuning</h3>
+
+<p>To ensure our model was performing at its best, we conducted extensive hyperparameter tuning. The plots below show the impact of different hyperparameters on model accuracy, such as the number of estimators, maximum depth, and minimum samples split.</p>
+
+<div style="text-align: center;">
+  <img src="/assets/img/hyper-parameter-tuning.png" alt="Hyperparameter Tuning" style="width: 50%; height: auto;" />
+</div>
+
+<h2 id="feature-significance">Feature Significance</h2>
+
+<p>The Random Forest model allowed us to assess the importance of each feature in predicting student performance. As shown in the bar plot below, absences emerged as the most critical factor, contributing to over 40% of the model’s overall feature importance. Other significant features included weekly study time, parental support, and parental education.</p>
+
+<div style="text-align: center;">
+  <img src="/assets/img/feature-significance.png" alt="Feature Significance" style="width: 50%; height: auto;" />
+</div>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>Our findings demonstrate that non-academic features can effectively predict academic success, achieving nearly 70% accuracy. The insights gained, particularly the importance of student attendance, could be valuable for schools seeking to identify and support at-risk students.</p>
+
+<div style="text-align: center;">
+  <a href="/assets/pdfs/DSS_RandomForest.pdf" class="win95-button">
+    View Full PDF
+  </a>
+</div>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>We extend our gratitude to Emily Rothenberg for her guidance and to Isaac Chang for his creative contributions. Special thanks to our peers and volunteers who supported us throughout this project.</p>
 
 				
 					<hr>
