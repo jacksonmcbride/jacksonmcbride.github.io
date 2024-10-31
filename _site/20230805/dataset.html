@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJKEFFQZ7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BJKEFFQZ7G');
+</script>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
+    
+        <title>Fencing Dataset</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
+    
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<script src="/assets/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="default_title">
+			<img src="/assets/img/mycomputer.png" />
+			
+				<h1>Jackson McBride</h1>
+			
+		</div>
+		<ul class="topbar">
+	<a href="/me"><li><u>A</u>bout</li></a>
+	<a href="https://www.linkedin.com/in/jackson-r-mcbride" target="_blank"><li><u>L</u>inkedin</li></a>
+	<a href="https://github.com/jacksonmcbride" target="_blank"><li><u>G</u>ithub</li></a>
+</ul>
+		<div class="tag_list">
+			<ul id="tag-list">
+				<li><a href="/" ><img src="/assets/img/disk.png" />(C:)</a>
+			<ul>
+				
+				
+				<li><a href="/tag/athletics/" title="athletics"><img src="/assets/img/folder.ico" />athletics</a></li>
+				
+				<li><a href="/tag/portfolio/" title="portfolio"><img src="/assets/img/folder.ico" />portfolio</a></li>
+				
+			</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="post_list">
+			
+				<ul>
+					
+					<li><a href="/20240823/china" title="China"><img src="/assets/img/file.ico" title="China" />China</a></li>
+					
+					<li><a href="/20240801/RF" title="Random Forest Classification of Academic Success"><img src="/assets/img/file.ico" title="Random Forest Classification of Academic Success" />Random Forest Classification of Academic Success</a></li>
+					
+					<li><a href="/20240324/ncaa" title="First NCAA Championships"><img src="/assets/img/file.ico" title="First NCAA Championships" />First NCAA Championships</a></li>
+					
+					<li><a href="/20240305/mimi" title="Mimi"><img src="/assets/img/file.ico" title="Mimi" />Mimi</a></li>
+					
+					<li><a href="/20240305/carter" title="Carter"><img src="/assets/img/file.ico" title="Carter" />Carter</a></li>
+					
+					<li><a href="/20230805/dataset" title="Fencing Dataset"><img src="/assets/img/file.ico" title="Fencing Dataset" />Fencing Dataset</a></li>
+					
+					<li><a href="/20210901/college" title="College Fencing"><img src="/assets/img/file.ico" title="College Fencing" />College Fencing</a></li>
+					
+					<li><a href="/20191227/usaf" title="USA Fencing Career"><img src="/assets/img/file.ico" title="USA Fencing Career" />USA Fencing Career</a></li>
+					
+				</ul>
+			
+		</div>
+		<div class="post_total">
+			
+				<div class="left">8 object(s)</div>
+			
+			<div class="right">&nbsp;</div>
+		</div>
+	</div>
+	
+        <div class="content">
+			<div class="post_title">
+				<img src="/assets/img/file.png" />
+				<h1>Fencing Dataset</h1>
+				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
+				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
+				<div class="btn"><span class="fa fa-window-minimize"></span></div>
+			</div>
+			<ul class="topbar">
+				<li>August 5, 2023</li>
+			</ul>
+			<div class="post_content">
+        		<div style="text-align: center;">
+  <img src="/assets/img/generic_fencer.jpg" alt="Team" style="width: 600px; height: auto;" />
+</div>
+
+<h2 id="overview-of-the-fencing-dataset">Overview of the Fencing Dataset</h2>
+
+<p>The <strong>USA Fencing Team Archives Dataset</strong> brings together a comprehensive historical record of U.S. fencers and their national rankings dating back to 2010. The dataset is available on <a href="https://www.kaggle.com/datasets/ajaxofgreee/usa-fencing-team-archives/data">Kaggle</a>, where it provides valuable insights into the sport’s evolving rankings over more than a decade. This dataset is unique not only in its scope but also in its precision—capturing the exact rankings as they were updated over time, offering a historical trajectory for each fencer in the dataset.</p>
+
+<h2 id="what-makes-this-dataset-unique">What Makes This Dataset Unique</h2>
+
+<p>Unlike typical rankings data, this dataset is meticulously <strong>comprehensive in time</strong>. Each entry reflects the exact ranking of each fencer whenever USA Fencing updated its points. This time-based accuracy means users can analyze ranking fluctuations, compare fencers’ progress, and understand trends across weapon categories, gender, and age groups over the years.</p>
+
+<h2 id="how-the-dataset-was-compiled">How the Dataset Was Compiled</h2>
+
+<p>Creating this dataset required a series of scripts to automate and compile data across various rankings and time periods:</p>
+
+<ol>
+  <li>
+    <p><strong>Data Collection Script</strong>: The dataset began with a script to retrieve all available ranking files from USA Fencing’s website. Each time USA Fencing released an update, this script would download the latest rankings.</p>
+  </li>
+  <li>
+    <p><strong>Data Parsing</strong>: After collection, another script parsed the raw text files to identify each fencer’s details, including <strong>region</strong>, <strong>club</strong>, <strong>weapon</strong>, <strong>age group</strong>, and <strong>gender</strong>.</p>
+  </li>
+  <li>
+    <p><strong>JSON Conversion</strong>: Finally, I converted the parsed data into JSON files, organizing the data by weapon, gender, and age group. Each JSON file contains a list of fencers, and within each fencer’s data, there’s a <strong>dictionary of dates and rankings</strong>. This structure allows for easy access to the exact ranking of each fencer over time, enabling granular analysis.</p>
+  </li>
+</ol>
+
+<h2 id="dataset-features">Dataset Features</h2>
+
+<p>Each entry in the dataset includes:</p>
+
+<ul>
+  <li><strong>Fencer Details</strong>: Name, club affiliation, region, and category (e.g., weapon, gender, age group).</li>
+  <li><strong>Time-based Rankings</strong>: A dictionary containing <strong>dates</strong> and <strong>rankings</strong> for each fencer, tracking their progression over time.</li>
+</ul>
+
+<p>This structure makes it possible to conduct a variety of analyses, from tracking individual fencers’ progress over time to examining broader trends within different fencing categories.</p>
+
+<h2 id="potential-applications">Potential Applications</h2>
+
+<p>The dataset can be used for a range of analytical purposes, including:</p>
+
+<ul>
+  <li><strong>Performance Analysis</strong>: Analyze how rankings change over time, providing insights into consistency, improvement, or declines.</li>
+  <li><strong>Club and Regional Strength Analysis</strong>: By aggregating ranking data by club or region, users can assess the strength and development of specific fencing communities.</li>
+  <li><strong>Predictive Modeling</strong>: Given the time-based nature of the data, it’s possible to apply predictive modeling techniques to forecast future rankings.</li>
+</ul>
+
+<p>This project showcases my technical skills in <strong>data scraping</strong>, <strong>data parsing</strong>, and <strong>structured data organization</strong> for longitudinal sports analysis. If you’re interested in fencing, sports data, or historical ranking analysis, <a href="https://www.kaggle.com/datasets/ajaxofgreee/usa-fencing-team-archives/data">check out the dataset on Kaggle</a> to dive into the world of U.S. fencing!</p>
+
+<hr />
+
+<p>Feel free to modify or expand any sections further based on specific features or analytical insights you might want to highlight. This structure should make it clear how the dataset was created, what it contains, and potential applications for users.</p>
+
+				
+					<hr>
+<p>I hope you enjoy this site. I made it based on a cool site that I saw online: <a href="https://h01000110.github.io/20170917/windows-95">https://h01000110.github.io/20170917/windows-95</a></p>
+<p>ᛅᛘᛚᛁᚦ</p>
+				
+			</div>
+		</div>
+    
+	<script src="/assets/js/001.js"></script>
+	<script src="/assets/js/002.js"></script>
+	<div class="footer">
+		<p>This website design is not mine. It was created by <a href="http://github.com/h01000110" target="_blank">h01000110</a> | Code licensed under <a href="https://github.com/h01000110/h01000110.github.io/blob/master/LICENSE" target="_blank">MIT License</a></p>
+	</div>
+</body>
+</html>
