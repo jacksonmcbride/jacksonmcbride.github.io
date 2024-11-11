@@ -1,12 +1,16 @@
-permalink: /:year:month:day/:title
-url: #Your url here
+# Site settings
+permalink: /:year/:month/:day/:title
+url: "https://yourwebsite.com" # Replace with your actual URL
 baseurl: ""
 
-# variables
-name: Jackson McBride
-description: My Personal Website
-google_verification: null
+# SEO and Metadata
+title: "Jackson McBride - Data Scientist and Researcher"
+description: "The official website of Jackson McBride, a data scientist with expertise in machine learning and data analysis at Columbia University."
+author: "Jackson McBride"
+name: "Jackson McBride"
 
+# Social and Open Graph
+image: "/assets/img/headshot.png" # Replace with actual image path for SEO preview
 
 # File management
 include: [".htaccess"]
@@ -22,4 +26,23 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter_opts:
-    disable : true
+    disable: true
+
+# Plugins
+plugins:
+  - jekyll-sitemap # Automatically generates sitemap.xml for SEO
+
+# Extra SEO information for structured data
+defaults:
+  - scope:
+      path: ""
+    values:
+      og:type: "website"
+      og:site_name: "Jackson McBride"
+      og:title: "Jackson McBride - Data Scientist and Researcher"
+      og:description: "Explore the research and data science work of Jackson McBride."
+      og:image: "/assets/img/headshot.png" # Replace with actual path to main image
+      twitter:card: "summary_large_image"
+      twitter:title: "Jackson McBride - Data Scientist"
+      twitter:description: "Data Scientist at Columbia University specializing in machine learning."
+      twitter:image: "/assets/img/headshot.png" # Replace with actual path
