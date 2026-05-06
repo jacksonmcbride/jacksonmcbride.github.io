@@ -1,6 +1,6 @@
 # Site settings
 permalink: /:year/:month/:day/:title
-url: "https://yourwebsite.com" # Replace with your actual URL
+url: "https://jacksonmcbride.xyz"
 baseurl: ""
 
 # SEO and Metadata
