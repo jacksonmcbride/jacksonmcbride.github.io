@@ -1,0 +1,41 @@
+---
+permalink: /lab/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WM Lab</title>
+  <link rel="stylesheet" href="/assets/css/98.css">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; }
+    body { background: #008082; font-family: "Pixelated MS Sans Serif", Arial; overflow: hidden; }
+    .lab-toolbar { position: fixed; top: 8px; left: 8px; z-index: 99999; }
+  </style>
+</head>
+<body>
+  <div class="lab-toolbar">
+    <button id="lab-open">Open another window</button>
+  </div>
+  <script src="/assets/js/wm.js"></script>
+  <script>
+    openWindow({ title: 'About',      body: '<p>This is the About window.</p><p>Drag the title bar to move me.</p>',                              x:  80, y:  80, w: 260 });
+    openWindow({ title: 'README.txt', body: '<p>Click anywhere on a window to bring it to the front.</p><p>The background windows go inactive.</p>', x: 220, y: 160, w: 320 });
+    openWindow({ title: 'Notes',      body: '<p>Try Close (×).</p><p>Try Minimize (hides the window).</p><p>Try Maximize (fills the screen).</p>',   x: 380, y: 250, w: 280 });
+
+    let openCount = 3;
+    document.getElementById('lab-open').addEventListener('click', function () {
+      openCount += 1;
+      openWindow({
+        title: 'Window ' + openCount,
+        body:  '<p>Window #' + openCount + '</p><p>Created at ' + new Date().toLocaleTimeString() + '</p>',
+        x: 100 + (openCount * 30) % 400,
+        y: 100 + (openCount * 30) % 300,
+        w: 260
+      });
+    });
+  </script>
+</body>
+</html>

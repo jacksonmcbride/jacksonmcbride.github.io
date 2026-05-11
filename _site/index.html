@@ -27,55 +27,58 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="title-bar">
-			<div class="title-bar-text">
-				<img src="/assets/img/mycomputer.png" style="vertical-align: middle; width: 14px; height: 14px; margin-right: 4px;" />
-				Jackson McBride
-			</div>
-		</div>
-		<ul class="topbar">
-	<a href="/me"><li><u>A</u>bout</li></a>
-	<a href="https://www.linkedin.com/in/jackson-r-mcbride" target="_blank"><li><u>L</u>inkedin</li></a>
-	<a href="https://github.com/jacksonmcbride" target="_blank"><li><u>G</u>ithub</li></a>
-</ul>
-		<div class="tag_list">
-			<ul id="tag-list">
-				<li><a href="/" ><img src="/assets/img/disk.png" />(C:)</a>
-			<ul>
-				
-				
-				<li><a href="/tag/athletics/" title="athletics"><img src="/assets/img/folder.ico" />athletics</a></li>
-				
-				<li><a href="/tag/portfolio/" title="portfolio"><img src="/assets/img/folder.ico" />portfolio</a></li>
-				
-			</ul>
-				</li>
-			</ul>
-		</div>
-		<div class="post_list">
-			
-				
-					<ul>
-    
-    
-    <li><a href="/tag/athletics/" title="athletics"><img src="/assets/img/folder.ico" title="athletics" />athletics</a></li>
-    
-    <li><a href="/tag/portfolio/" title="portfolio"><img src="/assets/img/folder.ico" title="portfolio" />portfolio</a></li>
-    
-</ul>
-
-				
-			
-		</div>
-		<div class="post_total">
-			
-				<div class="left">2 object(s)</div>
-			
-			<div class="right">&nbsp;</div>
-		</div>
-	</div>
 	
+	<style>
+.desktop-icon {
+    position: fixed;
+    width: 64px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+    user-select: none;
+    font-family: "Pixelated MS Sans Serif", Arial;
+    font-size: 11px;
+}
+.desktop-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 4px;
+}
+.desktop-icon:hover { background: rgba(0, 0, 80, 0.3); }
+</style>
+<div class="desktop-icon" id="open-explorer" style="top: 20px; left: 20px;">
+    <img src="/assets/img/icons/computer-32.png" alt="My Computer">
+    <div>My Computer</div>
+</div>
+<div class="desktop-icon" id="open-mydocs" style="top: 110px; left: 20px;">
+    <img src="/assets/img/icons/mydocs-32.png" alt="My Documents">
+    <div>My Documents</div>
+</div>
+<div class="desktop-icon" id="open-ie" style="top: 200px; left: 20px;">
+    <img src="/assets/img/icons/ie-32.png" alt="Internet Explorer">
+    <div>Internet Explorer</div>
+</div>
+<div class="desktop-icon" id="open-recycle" style="top: 290px; left: 20px;">
+    <img src="/assets/img/icons/recyclebin-32.png" alt="Recycle Bin">
+    <div>Recycle Bin</div>
+</div>
+<div class="desktop-icon" id="open-notepad" style="top: 380px; left: 20px;">
+    <img src="/assets/img/icons/notepad-32.png" alt="Notepad">
+    <div>Notepad</div>
+</div>
+
+	
+	
+	<div class="taskbar">
+		<button class="taskbar-start"><img src="/assets/img/start.png" alt="" />Start</button>
+		<div class="taskbar-windows"></div>
+		<div class="taskbar-clock"></div>
+	</div>
+	<script src="/assets/js/wm.js"></script>
+	<script src="/assets/js/desktop.js"></script>
+	<script src="/assets/js/taskbar.js"></script>
 	<script src="/assets/js/001.js"></script>
 	<script src="/assets/js/002.js"></script>
 </body>

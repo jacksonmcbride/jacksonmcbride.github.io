@@ -1,9 +1,43 @@
 ---
 layout: default
 ---
-<ul>
-    {% assign tags = site.tags | sort %}
-    {% for tag in tags %}
-    <li><a href="/tag/{{ tag | first | slugify }}/" title="{{ tag[0] | replace:'-', ' ' }}"><img src="/assets/img/folder.ico" title="{{ tag[0] | replace:'-', ' ' }}" />{{ tag[0] | replace:'-', ' ' }}</a></li>
-    {% endfor %}
-</ul>
+<style>
+.desktop-icon {
+    position: fixed;
+    width: 64px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+    user-select: none;
+    font-family: "Pixelated MS Sans Serif", Arial;
+    font-size: 11px;
+}
+.desktop-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 4px;
+}
+.desktop-icon:hover { background: rgba(0, 0, 80, 0.3); }
+</style>
+<div class="desktop-icon" id="open-explorer" style="top: 20px; left: 20px;">
+    <img src="/assets/img/icons/computer-32.png" alt="My Computer">
+    <div>My Computer</div>
+</div>
+<div class="desktop-icon" id="open-mydocs" style="top: 110px; left: 20px;">
+    <img src="/assets/img/icons/mydocs-32.png" alt="My Documents">
+    <div>My Documents</div>
+</div>
+<div class="desktop-icon" id="open-ie" style="top: 200px; left: 20px;">
+    <img src="/assets/img/icons/ie-32.png" alt="Internet Explorer">
+    <div>Internet Explorer</div>
+</div>
+<div class="desktop-icon" id="open-recycle" style="top: 290px; left: 20px;">
+    <img src="/assets/img/icons/recyclebin-32.png" alt="Recycle Bin">
+    <div>Recycle Bin</div>
+</div>
+<div class="desktop-icon" id="open-notepad" style="top: 380px; left: 20px;">
+    <img src="/assets/img/icons/notepad-32.png" alt="Notepad">
+    <div>Notepad</div>
+</div>

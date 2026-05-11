@@ -438,3 +438,75 @@ ul.topbar {
 ::-webkit-scrollbar-corner {
 	background-color: #cacaca;
 } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+.taskbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background: silver;
+	border-top: 1px solid #fff;
+	display: flex;
+	align-items: center;
+	padding: 3px;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+button.taskbar-start {
+	min-width: 0;
+	padding: 0 8px;
+	height: 32px;
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	font-weight: bold;
+
+	img {
+		width: 20px;
+		height: 20px;
+	}
+}
+.taskbar-windows {
+	flex: 1;
+	display: flex;
+	gap: 2px;
+	margin: 0 3px;
+	overflow: hidden;
+}
+button.taskbar-window {
+	height: 32px;
+	min-width: 0;
+	max-width: 160px;
+	padding: 0 6px;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	overflow: hidden;
+	justify-content: flex-start;
+	flex-shrink: 1;
+
+	img {
+		width: 16px;
+		height: 16px;
+		flex-shrink: 0;
+	}
+
+	span {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&.pressed {
+		box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+	}
+}
+.taskbar-clock {
+	height: 32px;
+	line-height: 32px;
+	padding: 0 10px;
+	box-shadow: inset 1px 1px grey, inset -1px -1px #fff;
+	font-family: "Pixelated MS Sans Serif", Arial;
+	font-size: 11px;
+}
