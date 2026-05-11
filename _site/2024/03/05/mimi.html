@@ -15,12 +15,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/assets/css/98.css">
 	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
     
         <title>Mimi</title>
 		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
     
-	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
 	<script src="/assets/js/highlight.pack.js"></script>
@@ -28,11 +28,11 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="default_title">
-			<img src="/assets/img/mycomputer.png" />
-			
-				<h1>Jackson McBride</h1>
-			
+		<div class="title-bar">
+			<div class="title-bar-text">
+				<img src="/assets/img/mycomputer.png" style="vertical-align: middle; width: 14px; height: 14px; margin-right: 4px;" />
+				Jackson McBride
+			</div>
 		</div>
 		<ul class="topbar">
 	<a href="/me"><li><u>A</u>bout</li></a>
@@ -85,12 +85,16 @@
 	</div>
 	
         <div class="content">
-			<div class="post_title">
-				<img src="/assets/img/file.png" />
-				<h1>Mimi</h1>
-				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
-				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
-				<div class="btn"><span class="fa fa-window-minimize"></span></div>
+			<div class="title-bar">
+				<div class="title-bar-text">
+					<img src="/assets/img/file.png" style="vertical-align: middle; width: 14px; height: 14px; margin-right: 4px;" />
+					Mimi
+				</div>
+				<div class="title-bar-controls">
+					<button aria-label="Minimize"></button>
+					<button aria-label="Maximize"></button>
+					<button aria-label="Close" onclick="location.href='/'"></button>
+				</div>
 			</div>
 			<ul class="topbar">
 				<li>March 5, 2024</li>

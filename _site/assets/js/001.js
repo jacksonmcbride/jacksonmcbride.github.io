@@ -1,8 +1,8 @@
 // By: h01000110 (hi)
 // github.com/h01000110
 
-var max = document.getElementsByClassName("btn")[1];
-var min = document.getElementsByClassName("btn")[2];
+var max = document.querySelector('button[aria-label="Maximize"]');
+var min = document.querySelector('button[aria-label="Minimize"]');
 
 function maximize () {
 	var post = document.getElementsByClassName("content")[0];
@@ -32,5 +32,5 @@ function minimize () {
 	}
 }
 
-max.addEventListener('click', maximize, false);
-min.addEventListener('click', minimize, false);
+if (max) max.addEventListener('click', maximize, false);
+if (min) min.addEventListener('click', minimize, false);
