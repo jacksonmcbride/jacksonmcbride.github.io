@@ -439,6 +439,13 @@ ul.topbar {
 	background-color: #cacaca;
 } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 
+#inline-explorer { display: none; }
+@media (max-width: 767px) {
+	#inline-explorer { display: block; }
+	.taskbar { display: none !important; }
+	.desktop-icon { display: none !important; }
+}
+
 .taskbar {
 	position: fixed;
 	bottom: 0;

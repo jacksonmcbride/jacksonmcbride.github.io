@@ -1,4 +1,5 @@
 (function () {
+  if (window.innerWidth < 768) return;
   let zCounter = 100;
   const windows = new Set();
   const taskbarBtns = new Map();

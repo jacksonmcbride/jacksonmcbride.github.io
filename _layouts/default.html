@@ -31,6 +31,9 @@
 </head>
 <body>
 	{% if page.url == '/' %}
+	<div id="inline-explorer">
+		{% include file_explorer.html show_close=false %}
+	</div>
 	{{ content }}
 	{% else %}
 	<div class="wrapper">
