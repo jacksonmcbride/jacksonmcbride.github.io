@@ -2,6 +2,7 @@
   let zCounter = 100;
   const windows = new Set();
   const taskbarBtns = new Map();
+  const ANIM_MS = 180;
 
   function topVisible() {
     let top = null;
@@ -31,6 +32,61 @@
     updateTaskbarStates();
   }
 
+  function getCollapseTransform(win) {
+    const btn = taskbarBtns.get(win);
+    if (!btn) return null;
+    const wr = win.getBoundingClientRect();
+    const br = btn.getBoundingClientRect();
+    if (wr.width === 0 || wr.height === 0) return null;
+    const sx = br.width / wr.width;
+    const sy = br.height / wr.height;
+    const tx = (br.left + br.width / 2) - (wr.left + wr.width / 2);
+    const ty = (br.top  + br.height / 2) - (wr.top  + wr.height / 2);
+    return 'translate(' + tx + 'px, ' + ty + 'px) scale(' + sx + ', ' + sy + ')';
+  }
+
+  function minimizeWindow(win) {
+    const t = getCollapseTransform(win);
+    if (!t) {
+      win.style.display = 'none';
+      updateTaskbarStates();
+      return;
+    }
+    win.style.transformOrigin = 'center center';
+    win.style.transition = 'transform ' + ANIM_MS + 'ms ease-out, opacity ' + ANIM_MS + 'ms ease-out';
+    win.style.transform = t;
+    win.style.opacity = '0';
+    setTimeout(function () {
+      win.style.display = 'none';
+      win.style.transition = '';
+      win.style.transform = '';
+      win.style.opacity = '';
+      updateTaskbarStates();
+    }, ANIM_MS);
+  }
+
+  function restoreWindow(win) {
+    win.style.display = '';
+    const t = getCollapseTransform(win);
+    if (!t) {
+      bringToFront(win);
+      return;
+    }
+    win.style.transformOrigin = 'center center';
+    win.style.transition = 'none';
+    win.style.transform = t;
+    win.style.opacity = '0';
+    // force reflow so the next style change animates
+    win.offsetWidth;
+    win.style.transition = 'transform ' + ANIM_MS + 'ms ease-out, opacity ' + ANIM_MS + 'ms ease-out';
+    win.style.transform = '';
+    win.style.opacity = '';
+    setTimeout(function () {
+      win.style.transition = '';
+    }, ANIM_MS);
+    bringToFront(win);
+  }
+
   function registerWindow(win, opts) {
     opts = opts || {};
     windows.add(win);
@@ -51,13 +107,11 @@
     btn.appendChild(span);
     btn.addEventListener('click', function () {
       if (win.style.display === 'none') {
-        win.style.display = '';
-        bringToFront(win);
+        restoreWindow(win);
         return;
       }
       if (win === topVisible()) {
-        win.style.display = 'none';
-        updateTaskbarStates();
+        minimizeWindow(win);
       } else {
         bringToFront(win);
       }
@@ -104,6 +158,8 @@
   window.bringToFront = bringToFront;
   window.registerWindow = registerWindow;
   window.unregisterWindow = unregisterWindow;
+  window.minimizeWindow = minimizeWindow;
+  window.restoreWindow = restoreWindow;
 
   window.openWindow = function (opts) {
     opts = opts || {};
@@ -142,8 +198,7 @@
       win.remove();
     });
     win.querySelector('button[aria-label="Minimize"]').addEventListener('click', function () {
-      win.style.display = 'none';
-      updateTaskbarStates();
+      minimizeWindow(win);
     });
     win.querySelector('button[aria-label="Maximize"]').addEventListener('click', function () {
       if (win.dataset.maximized === '1') {

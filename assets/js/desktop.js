@@ -84,8 +84,8 @@
         openWindow({
           title: 'About Me',
           body: body,
-          x: 160, y: 80, w: 560,
-          icon: '/assets/img/icons/mydocs-32.png'
+          x: EXPLORER_LEFT(), y: POST_TOP, w: 560,
+          icon: '/assets/img/icons/info-32.png'
         });
       });
   }
@@ -169,5 +169,6 @@
 
   if (window.location.pathname === '/' || window.location.pathname === '') {
     openExplorer();
+    openMyDocs();
   }
 })();
