@@ -1,8 +1,6 @@
 ---
 layout: me
 title: me
-tags:
-  - tag1
 ---
 
 # About Me
@@ -22,3 +20,6 @@ tags:
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/img/world_cup.jpg" alt="Jackson McBride" style="width: 300px; height: auto;">
 </div>
+
+## Resume
+[Download my CV]({{ site.baseurl }}/assets/pdfs/Jackson-McBride-CV.pdf)

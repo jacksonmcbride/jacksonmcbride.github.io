@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(cmdkey *)",
+      "Bash(git commit *)",
+      "Bash(magick -version)",
+      "PowerShell(Get-Command *)",
+      "Bash(rm -f main.css 18.jpg directory_structure.md directory_structure.txt _data/tags.yml assets/img/fence_1.jpg assets/img/fun.jpg assets/img/snowboarding.jpg assets/img/pixel.png assets/pdfs/Empirical_Limitations_KNN_Hedging.pdf assets/pdfs/transcript.pdf assets/pdfs/McBride_Jackson_CV.pdf assets/css/font-awesome.css _includes/donate.html)",
+      "Bash(rmdir _data)",
+      "Bash(rm -rf _site)",
+      "Bash(bundle install *)"
+    ]
+  }
+}
